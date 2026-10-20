@@ -7,10 +7,10 @@ math();
 if(document.body.dataset.page==='index' && location.hash){
  const anchor=decodeURIComponent(location.hash.slice(1));
  const target=(window.GUIDE_ANCHORS||{})[anchor];
- if(target && target!=='index.html')location.replace(target+'#'+encodeURIComponent(anchor));
+ if(target && target!=='index.html')location.replace(window.GuideTheme.url(target+'#'+encodeURIComponent(anchor)));
 }
 function themeLabel(){$('theme').textContent=document.documentElement.dataset.theme==='dark'?'Light mode':'Dark mode'}
-themeLabel();$('theme').onclick=()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('math-theme',t)}catch{}themeLabel()};
+themeLabel();$('theme').onclick=()=>{window.GuideTheme.set(document.documentElement.dataset.theme==='dark'?'light':'dark');themeLabel()};
 $('menu').onclick=()=>{const open=$('sidebar').classList.toggle('open');$('menu').setAttribute('aria-expanded',String(open))};
 document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>{document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));a.classList.add('active');$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false')});
 let completed=read('math-progress',[]);if(!Array.isArray(completed))completed=[];

@@ -14,6 +14,7 @@ The guide is divided into 13 linked pages:
 Lecture 2 follows the supplied photos. The circle-in-a-square problem and completion of all poker categories are marked as extensions. Bayes' theorem and dedicated independence exercises remain for a future chapter.
 
 - Progress and theme are saved in the current browser. Quiz attempts are session-only.
+- Theme is also carried in internal page URLs, so it survives page changes and refreshes even when the browser isolates or blocks storage for local files.
 - Print opens worked solutions on the current page and omits the interactive quiz.
 - Keep this folder alongside `lists`, `img/lec2`, and the two course-book PDFs so the source links and photos continue to work.
 - The local `katex` folder is copied from the supplied Physics for Electronics guide, allowing offline equation rendering.
